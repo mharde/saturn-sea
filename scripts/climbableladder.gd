@@ -14,3 +14,6 @@ func _on_body_exited(body):
 		if body.climbing == true:
 			body.climbing = false
 
+
+
+

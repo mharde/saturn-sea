@@ -15,7 +15,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	#Define climbing mechanics.
 	if climbing == false:
-		velocity.y += gravity
+		velocity.y = gravity
 	if climbing == true:
 		velocity.y = 0
 		if Input.is_action_pressed("move_up"):
