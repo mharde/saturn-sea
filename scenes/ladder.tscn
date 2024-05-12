@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://65a0iq0ygtfg"]
+
+[ext_resource type="Texture2D" uid="uid://d2a27h1a1rkla" path="res://assets/sprites/16-bit ladder.png" id="1_487m2"]
+[ext_resource type="Script" path="res://scripts/climbableladder.gd" id="1_fcqkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2xqp"]
+size = Vector2(12, 14)
+
+[node name="Ladder" type="Area2D"]
+light_mask = 3
+visibility_layer = 3
+collision_mask = 2
+script = ExtResource("1_fcqkf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_487m2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q2xqp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
