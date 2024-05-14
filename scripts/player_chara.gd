@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -100.0
 @export var gravity = 200
 @export var climbing = false
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -45,7 +46,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	move_and_slide()
-
+	
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_pressed("interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 
 	
 
