@@ -735,8 +735,6 @@ layer_0/tile_data = PackedInt32Array(65535, 393216, 1, 0, 393216, 1, 1, 393216, 
 [node name="PlayerChara" parent="." instance=ExtResource("1_xsubg")]
 z_index = 1
 position = Vector2(100, 439)
-gravity = 200
-climbing = false
 
 [node name="Camera2D" type="Camera2D" parent="PlayerChara"]
 position = Vector2(1, 0)
@@ -749,7 +747,6 @@ position = Vector2(269, 445)
 
 [node name="Actionable" parent="NPCInteract" instance=ExtResource("8_intq1")]
 dialogue_resource = ExtResource("9_u1gyl")
-dialogue_start = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteract/Actionable"]
 position = Vector2(-1, 2)
