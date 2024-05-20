@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dykbj6se5tufy"]
+[gd_scene load_steps=3 format=3 uid="uid://dykbj6se5tufy"]
 
 [ext_resource type="Script" path="res://scripts/actionable.gd" id="1_is1ss"]
+[ext_resource type="Resource" uid="uid://dryr5jyetsreg" path="res://dialogue/main.dialogue" id="2_ajy3p"]
 
 [node name="Actionable" type="Area2D"]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_is1ss")
+dialogue_resource = ExtResource("2_ajy3p")

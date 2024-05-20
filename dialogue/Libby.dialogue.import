@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bcfq5lfnv7svo"
+path="res://.godot/imported/Libby.dialogue-b68de0243900f7c97c8d9d815aecfc0b.tres"
+
+[deps]
+
+source_file="res://dialogue/Libby.dialogue"
+dest_files=["res://.godot/imported/Libby.dialogue-b68de0243900f7c97c8d9d815aecfc0b.tres"]
+
+[params]
+
+defaults=true

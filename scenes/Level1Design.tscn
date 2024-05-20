@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2woqnw7p427a"]
+[gd_scene load_steps=19 format=3 uid="uid://2woqnw7p427a"]
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_cpytj"]
 [ext_resource type="Texture2D" uid="uid://df07pxcli5djw" path="res://assets/placeholder sprites/world_tileset.png" id="4_ip4nu"]
@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://qwig5u4mmgtu" path="res://scenes/player_chara.tscn" id="6_wavqa"]
 [ext_resource type="PackedScene" uid="uid://u4evdvn458gc" path="res://scenes/npc_interact.tscn" id="7_s40rp"]
 [ext_resource type="PackedScene" uid="uid://dykbj6se5tufy" path="res://scenes/actionable.tscn" id="8_q23of"]
-[ext_resource type="Resource" uid="uid://dryr5jyetsreg" path="res://dialogue/main.dialogue" id="9_gbqoe"]
+[ext_resource type="Script" path="res://scenes/actionable2.gd" id="9_wq3a0"]
+[ext_resource type="Resource" uid="uid://bcfq5lfnv7svo" path="res://dialogue/Libby.dialogue" id="10_0uyua"]
 [ext_resource type="PackedScene" uid="uid://65a0iq0ygtfg" path="res://scenes/ladder.tscn" id="10_smsdd"]
+[ext_resource type="Script" path="res://scenes/actionable3.gd" id="11_aima2"]
+[ext_resource type="Resource" uid="uid://bhu1n63gsnkr5" path="res://dialogue/Pio.dialogue" id="12_q2805"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dou71"]
 texture = ExtResource("4_ip4nu")
@@ -1247,6 +1250,8 @@ sources/3 = SubResource("TileSetAtlasSource_whhdw")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqm0m"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8k8nc"]
+
 [node name="Level 1 Designing" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -1276,20 +1281,48 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="NPCInteract" parent="." instance=ExtResource("7_s40rp")]
-position = Vector2(269, 445)
-
-[node name="Actionable" parent="NPCInteract" instance=ExtResource("8_q23of")]
-dialogue_resource = ExtResource("9_gbqoe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteract/Actionable"]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_sqm0m")
-
 [node name="Ladders" type="Node" parent="."]
 
-[node name="Ladder" parent="Ladders" instance=ExtResource("10_smsdd")]
+[node name="Ladder1" parent="Ladders" instance=ExtResource("10_smsdd")]
 position = Vector2(173, 481)
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource("10_smsdd")]
 position = Vector2(283, 482)
+
+[node name="NPCInteracts" type="Node" parent="."]
+
+[node name="NPCInteract 1" parent="NPCInteracts" instance=ExtResource("7_s40rp")]
+z_index = 1
+position = Vector2(428, 477)
+
+[node name="Actionable" parent="NPCInteracts/NPCInteract 1" instance=ExtResource("8_q23of")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteracts/NPCInteract 1/Actionable"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_sqm0m")
+
+[node name="NPCInteract 2" parent="NPCInteracts" instance=ExtResource("7_s40rp")]
+z_index = 1
+position = Vector2(742, 476)
+
+[node name="Actionable" parent="NPCInteracts/NPCInteract 2" instance=ExtResource("8_q23of")]
+script = ExtResource("9_wq3a0")
+dialogue_resource = ExtResource("10_0uyua")
+dialogue_start = "LibbyStart"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteracts/NPCInteract 2/Actionable"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_8k8nc")
+
+[node name="NPCInteract 3" parent="NPCInteracts" instance=ExtResource("7_s40rp")]
+z_index = 1
+position = Vector2(1118, 477)
+
+[node name="Actionable" parent="NPCInteracts/NPCInteract 3" instance=ExtResource("8_q23of")]
+script = ExtResource("11_aima2")
+dialogue_resource = ExtResource("12_q2805")
+dialogue_start = "PioStart"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteracts/NPCInteract 3/Actionable"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_8k8nc")

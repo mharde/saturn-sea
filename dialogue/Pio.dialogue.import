@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bhu1n63gsnkr5"
+path="res://.godot/imported/Pio.dialogue-8e705aa5be673a8c34aee01a7d22f8c2.tres"
+
+[deps]
+
+source_file="res://dialogue/Pio.dialogue"
+dest_files=["res://.godot/imported/Pio.dialogue-8e705aa5be673a8c34aee01a7d22f8c2.tres"]
+
+[params]
+
+defaults=true
