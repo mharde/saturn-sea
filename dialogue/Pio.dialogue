@@ -1,5 +1,19 @@
 ~ PioStart
 
-Pio: Hi.
+Pio: [[thelightsaredecreasing...|thismaybeasignof...|...peacekeepersrunningthrough...]]
+Nat: Umm... \nExcuse me?
+Pio: [[itwasn'talwaysthisway...|nearlyforgottendarknightswiththehaze...]]
+- Excuse me!
+	Pio: Oh, sorry little one! What do you need?
+	Nat: Can you turn off your lights?
+	Pio: Turn off...? You mean we're not under attack?
+	Nat: ...no? Haven't you heard about Grannie May's final wish?
+	Pio: Can't say I have. 
+	Nat: We're trying to turn off the lights so Grannie can see the stars.
+	Pio: Oh. \nSo no attack?
+	Nat: Nope! Just seeing stars.
+	Pio: Then I guess I can get behind that. => END!
+- ~Listen to the muttering~
+	Pio: The lights are decreasing. \nThe Peacekeepers been running through. \nSign of attack? => PioStart
 
 => END
