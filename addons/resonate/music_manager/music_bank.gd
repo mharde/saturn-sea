@@ -15,3 +15,6 @@ extends Node
 
 ## The collection of tracks associated with this bank.
 @export var tracks: Array[MusicTrackResource]
+
+
+
