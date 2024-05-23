@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://73arahnwt0cj"]
+[gd_scene load_steps=24 format=3 uid="uid://73arahnwt0cj"]
 
 [ext_resource type="PackedScene" uid="uid://qwig5u4mmgtu" path="res://scenes/player_chara.tscn" id="1_xsubg"]
 [ext_resource type="Texture2D" uid="uid://df07pxcli5djw" path="res://assets/placeholder sprites/world_tileset.png" id="2_1r87x"]
@@ -9,7 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://cx62yf5hiu6wt" path="res://assets/city parallax_2.png" id="8_hnena"]
 [ext_resource type="PackedScene" uid="uid://dykbj6se5tufy" path="res://scenes/actionable.tscn" id="8_intq1"]
 [ext_resource type="PackedScene" uid="uid://65a0iq0ygtfg" path="res://scenes/ladder.tscn" id="8_s1psi"]
-[ext_resource type="Resource" uid="uid://dryr5jyetsreg" path="res://dialogue/main.dialogue" id="9_u1gyl"]
+[ext_resource type="AudioStream" uid="uid://dd2tg6d01ujdf" path="res://assets/music/Saturn_of_the_Sea__CORE_Music_stem_Loop.wav" id="10_06to8"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="10_8rsf5"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="11_5yiky"]
+[ext_resource type="AudioStream" uid="uid://3uk8polwehfw" path="res://assets/music/Saturn_of_the_Sea_STRINGS_stem_Loop.wav" id="11_h3b8m"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="12_xgts8"]
+[ext_resource type="AudioStream" uid="uid://cj0nwj36djvwe" path="res://assets/music/Saturn_of_the_Sea_Solo_PIANO_Loop.wav" id="15_m14mb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dou71"]
 texture = ExtResource("2_1r87x")
@@ -693,6 +698,33 @@ sources/1 = SubResource("TileSetAtlasSource_b1afb")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqm0m"]
 
+[sub_resource type="Resource" id="Resource_6fap0"]
+script = ExtResource("12_xgts8")
+name = ""
+enabled = true
+volume = 0.0
+stream = ExtResource("10_06to8")
+
+[sub_resource type="Resource" id="Resource_ksdfj"]
+script = ExtResource("12_xgts8")
+name = ""
+enabled = true
+volume = 0.0
+stream = ExtResource("11_h3b8m")
+
+[sub_resource type="Resource" id="Resource_ub7ml"]
+script = ExtResource("12_xgts8")
+name = ""
+enabled = false
+volume = 0.0
+stream = ExtResource("15_m14mb")
+
+[sub_resource type="Resource" id="Resource_m3mkl"]
+script = ExtResource("11_5yiky")
+name = "gameplay"
+bus = ""
+stems = Array[ExtResource("12_xgts8")]([SubResource("Resource_6fap0"), SubResource("Resource_ksdfj"), SubResource("Resource_ub7ml")])
+
 [node name="Level 1 WIP" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -746,7 +778,6 @@ position_smoothing_enabled = true
 position = Vector2(269, 445)
 
 [node name="Actionable" parent="NPCInteract" instance=ExtResource("8_intq1")]
-dialogue_resource = ExtResource("9_u1gyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteract/Actionable"]
 position = Vector2(-1, 2)
@@ -759,3 +790,8 @@ position = Vector2(173, 481)
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource("8_s1psi")]
 position = Vector2(283, 482)
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("10_8rsf5")
+label = "jamails music"
+tracks = Array[ExtResource("11_5yiky")]([SubResource("Resource_m3mkl")])

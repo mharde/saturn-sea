@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cohw01rnqchbu"]
+
+[ext_resource type="AudioStream" uid="uid://dd2tg6d01ujdf" path="res://assets/music/Saturn_of_the_Sea__CORE_Music_stem_Loop.wav" id="1_qbd2w"]
+
+[node name="Core Music Loop" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_qbd2w")
+autoplay = true
+bus = &"Music"
