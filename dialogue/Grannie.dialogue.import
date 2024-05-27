@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dtu7piowbgecb"
+path="res://.godot/imported/Grannie.dialogue-375dbbead3a66a34eb56ad83556b683e.tres"
+
+[deps]
+
+source_file="res://dialogue/Grannie.dialogue"
+dest_files=["res://.godot/imported/Grannie.dialogue-375dbbead3a66a34eb56ad83556b683e.tres"]
+
+[params]
+
+defaults=true

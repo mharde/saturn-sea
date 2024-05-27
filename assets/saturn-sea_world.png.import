@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://37w2lne478dj"
-path="res://.godot/imported/saturn-sea_world.png-87f64dcc06ee341f9d5f3d651c1329ef.ctex"
+path="res://.godot/imported/saturn-sea_world.png-abd6b1d2b4823a4b32ae5cfbd17d41b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/saturn-sea_world.png"
-dest_files=["res://.godot/imported/saturn-sea_world.png-87f64dcc06ee341f9d5f3d651c1329ef.ctex"]
+source_file="res://assets/saturn-sea_world.png"
+dest_files=["res://.godot/imported/saturn-sea_world.png-abd6b1d2b4823a4b32ae5cfbd17d41b4.ctex"]
 
 [params]
 

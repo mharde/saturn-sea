@@ -145,7 +145,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8odt"]
 radius = 6.08276
 
-[node name="Player" type="CharacterBody2D" groups=["Climber"]]
+[node name="Player" type="CharacterBody2D" groups=["Climber", "Lightbearer", "Player"]]
 disable_mode = 2
 collision_layer = 2
 script = ExtResource("1_03hdv")
