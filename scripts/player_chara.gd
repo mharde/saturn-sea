@@ -47,12 +47,22 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
-func _unhandled_input(_event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void: #handling interactions
+	set_physics_process(false) #to prevent player movement during interactions
 	if Input.is_action_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+	set_physics_process(true) #to re-enable player movement after interactions
+	
+			
+		
+			
+		
+			
+	
+		
 
 	
 

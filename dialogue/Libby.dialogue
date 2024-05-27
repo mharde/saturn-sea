@@ -12,11 +12,13 @@ Libby: Terrible thing, yes.
 		- Well! She helped so many people, and this will be a way to help her.
 			Libby: True. Hmm... \nSome wouldn't care about that.
 			Nat: But if enough care, then they'd be pushed to care too!
-			Libby: Fair enough. \nI'll make sure to turn off my lights, and let my neighbors know, too. => END!
+			Libby: Fair enough. \nI'll make sure to turn off my lights, and let my neighbors know, too. 
+			=> END
 		- Because why not? It's just for one night.
 			Libby: But what if they really need those lights tonight?
 			Nat: Well...umm.. \nBiolum lamps?
-			Libby: Hmm... \nGood point. I'll suggest that when I tell my neighbors about it, then. => END
+			Libby: Hmm... \nGood point. I'll suggest that when I tell my neighbors about it, then. 
+			=> END
 	- She helped so many and this will be a way to help her.
 		Libby: True. Hmm... \nSome wouldn't care about that.
 		Nat: But if enough care, then they'd be pushed to care too!
@@ -24,4 +26,5 @@ Libby: Terrible thing, yes.
 	- Because why not? It's just for one night.
 		Libby: But what if they really need those lights tonight?
 		Nat: Well...umm.. \nBiolum lamps?
-		Libby: Hmm... \nGood point. I'll suggest that when I tell my neighbors about it, then. => END
+		Libby: Hmm... \nGood point. I'll suggest that when I tell my neighbors about it, then. 
+		=> END

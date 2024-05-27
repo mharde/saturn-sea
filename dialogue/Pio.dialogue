@@ -12,8 +12,10 @@ Pio: [[itwasn'talwaysthisway...|nearlyforgottendarknightswiththehaze...]]
 	Nat: We're trying to turn off the lights so Grannie can see the stars.
 	Pio: Oh. \nSo no attack?
 	Nat: Nope! Just seeing stars.
-	Pio: Then I guess I can get behind that. => END!
+	Pio: Then I guess I can get behind that. 
+	=> END
 - ~Listen to the muttering~
-	Pio: The lights are decreasing. \nThe Peacekeepers been running through. \nSign of attack? => PioStart
+	Pio: The lights are decreasing. \nThe Peacekeepers been running through. \nSign of attack? 
+	=> PioStart
 
 => END

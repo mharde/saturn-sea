@@ -31,6 +31,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SoundManager="*res://addons/resonate/sound_manager/sound_manager.gd"
 MusicManager="*res://addons/resonate/music_manager/music_manager.gd"
 
+[dialogue_manager]
+
+general/balloon_path="res://dialogue/balloon.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/resonate/plugin.cfg")

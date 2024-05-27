@@ -8,9 +8,11 @@ Leo: Say, what are you doing out? \nI saw a friend of yours running about, too.
 	Nat: That's what she says, at least.
 	Leo: What a shame. I was just talking to her last week, healthy as can be! And -
 	Nat: ...
-	Leo: Right. I'll go ahead to turn off my lights, don't you worry! => END
+	Leo: Right. I'll go ahead to turn off my lights, don't you worry! 
+	=> END
 - You didn't see anything, old man.
-	Leo: Alright, keep your secrets. => END
+	Leo: Alright, keep your secrets. 
+	=> END
 	
 
 
