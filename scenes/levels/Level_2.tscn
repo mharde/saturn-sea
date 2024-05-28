@@ -702,6 +702,27 @@ texture = ExtResource("10_rm03k")
 18:20/0 = 0
 18:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:20/0/physics_layer_0/angular_velocity = 0.0
+11:11/0 = 0
+11:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:11/0/physics_layer_0/angular_velocity = 0.0
+5:12/0 = 0
+5:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:12/0/physics_layer_0/angular_velocity = 0.0
+6:12/0 = 0
+6:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:12/0/physics_layer_0/angular_velocity = 0.0
+7:12/0 = 0
+7:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:12/0/physics_layer_0/angular_velocity = 0.0
+8:12/0 = 0
+8:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:12/0/physics_layer_0/angular_velocity = 0.0
+10:12/0 = 0
+10:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:12/0/physics_layer_0/angular_velocity = 0.0
+11:12/0 = 0
+11:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:12/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_whhdw"]
 texture = ExtResource("11_50mad")
@@ -1398,4 +1419,5 @@ libraries = {
 "": SubResource("AnimationLibrary_ke0fi")
 }
 
+[connection signal="area_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="NPCInteracts/NPCInteract 4/Actionable" method="_on_area_exited"]
 [connection signal="body_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="PlayerChara" method="_on_actionable_body_exited"]

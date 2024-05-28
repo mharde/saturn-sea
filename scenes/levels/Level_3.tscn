@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd4kamjg3i64f"]
+
+[ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="2_85gwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o3qh"]
+size = Vector2(24, 53)
+
+[sub_resource type="Animation" id="Animation_wt840"]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2242, 958)]
+}
+
+[sub_resource type="Animation" id="Animation_aehng"]
+resource_name = "cutscene"
+length = 25.0
+
+[sub_resource type="Animation" id="Animation_083up"]
+resource_name = "title_card"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1978, 1279), Vector2(2242, 958), Vector2(2678, 911), Vector2(3024, 929), Vector2(3185, 924)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ke0fi"]
+_data = {
+"RESET": SubResource("Animation_wt840"),
+"cutscene": SubResource("Animation_aehng"),
+"title_card": SubResource("Animation_083up")
+}
+
+[node name="Level 3 - End Card" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="StarfieldBkgrd" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(3, 3.354)
+texture = ExtResource("2_85gwv")
+centered = false
+region_filter_clip_enabled = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="ParallaxBackground"]
+color = Color(0.943767, 0.467753, 0.197513, 1)
+energy = 1.67
+blend_mode = 1
+
+[node name="Music Transition 3" type="Area2D" parent="."]
+position = Vector2(39, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 3"]
+position = Vector2(745, 462)
+shape = SubResource("RectangleShape2D_3o3qh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ke0fi")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2242, 958)
