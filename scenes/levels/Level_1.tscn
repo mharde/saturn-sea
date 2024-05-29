@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=38 format=3 uid="uid://2woqnw7p427a"]
+=======
+[gd_scene load_steps=43 format=3 uid="uid://2woqnw7p427a"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_bpo5j"]
 [ext_resource type="Texture2D" uid="uid://cpcd2a25kdtwk" path="res://assets/city light pollution.png" id="2_13igf"]
@@ -21,6 +25,14 @@
 [ext_resource type="Texture2D" uid="uid://c8c6fnbxs0b7r" path="res://assets/sprites/saturn-sea_world.png" id="19_d2mj0"]
 [ext_resource type="Script" path="res://scripts/LightState.gd" id="20_8fmdc"]
 [ext_resource type="PackedScene" uid="uid://bgs4d3glnklel" path="res://scenes/next_level.tscn" id="21_h7ois"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" path="res://scripts/Music Transition 1.gd" id="21_wmfue"]
+[ext_resource type="Script" path="res://scripts/Music Transition 2.gd" id="22_as2aw"]
+[ext_resource type="AudioStream" uid="uid://dd2tg6d01ujdf" path="res://assets/music/Saturn_of_the_Sea__CORE_Music_stem_Loop.wav" id="22_n2677"]
+[ext_resource type="AudioStream" uid="uid://3uk8polwehfw" path="res://assets/music/Saturn_of_the_Sea_STRINGS_stem_Loop.wav" id="23_1vnfi"]
+[ext_resource type="AudioStream" uid="uid://cj0nwj36djvwe" path="res://assets/music/Saturn_of_the_Sea_Solo_PIANO_Loop.wav" id="23_auxaq"]
+>>>>>>> Stashed changes
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47n6d"]
 animations = [{
@@ -1681,6 +1693,10 @@ energy = 5.66
 texture = SubResource("GradientTexture2D_oexm0")
 
 [node name="Music Transition 1" type="Area2D" parent="."]
+<<<<<<< Updated upstream
+=======
+script = ExtResource("21_wmfue")
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 1"]
 position = Vector2(581, 461)
@@ -1688,8 +1704,15 @@ shape = SubResource("RectangleShape2D_3o3qh")
 
 [node name="Music Transition 2" type="Area2D" parent="."]
 position = Vector2(438, 0)
+<<<<<<< Updated upstream
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 2"]
+=======
+script = ExtResource("22_as2aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 2"]
+light_mask = 3
+>>>>>>> Stashed changes
 position = Vector2(581, 461)
 shape = SubResource("RectangleShape2D_3o3qh")
 
@@ -1714,5 +1737,22 @@ offset_bottom = 474.0
 text = "Convince neighbors to turn off their lights
                     ->"
 
+<<<<<<< Updated upstream
+=======
+[node name="Strings stem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_1vnfi")
+autoplay = true
+bus = &"Music"
+
+[node name="Core Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_n2677")
+autoplay = true
+bus = &"Music"
+
+[node name="Elder Found" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_auxaq")
+bus = &"Music"
+
+>>>>>>> Stashed changes
 [connection signal="visibility_changed" from="Street Lighting 2Ds/StreetLight A_1" to="NPCInteracts/NPCInteract 1/Actionable" method="_on_street_light_a_1_visibility_changed"]
 [connection signal="visibility_changed" from="Street Lighting 2Ds/StreetLight A_1" to="Street Lighting 2Ds/StreetLight A_1/LightState" method="_on_street_light_a_1_visibility_changed"]

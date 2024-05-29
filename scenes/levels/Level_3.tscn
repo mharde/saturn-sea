@@ -52,6 +52,10 @@ _data = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="StarfieldBkgrd" type="Sprite2D" parent="ParallaxBackground"]
+<<<<<<< Updated upstream
+=======
+position = Vector2(-150, -330)
+>>>>>>> Stashed changes
 scale = Vector2(3, 3.354)
 texture = ExtResource("2_85gwv")
 centered = false
