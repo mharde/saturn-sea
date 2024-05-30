@@ -6,6 +6,8 @@ func _on_body_entered(body):
 	if body.is_in_group("Climber"):
 		if body.climbing == false:
 			body.climbing = true
+	if body.is_in_group("Player") :
+		MusicPlayer2.volume_db -= 2	
 
 #set is_climbing to false to stop climbing
 func _on_body_exited(body):
