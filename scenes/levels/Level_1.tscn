@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://2woqnw7p427a"]
+[gd_scene load_steps=42 format=3 uid="uid://2woqnw7p427a"]
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_bpo5j"]
 [ext_resource type="Texture2D" uid="uid://cpcd2a25kdtwk" path="res://assets/city light pollution.png" id="2_13igf"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b3bcm0028a2o8" path="res://assets/sprites/saturn-sea_npcleo 1.png" id="7_agqt3"]
 [ext_resource type="PackedScene" uid="uid://dykbj6se5tufy" path="res://scenes/actionable.tscn" id="8_0n0l7"]
 [ext_resource type="Script" path="res://scripts/actionable2.gd" id="9_4v8op"]
+[ext_resource type="Script" path="res://scenes/levels/collision_play_song.gd" id="9_rhhuh"]
+[ext_resource type="Script" path="res://scenes/musicfade2.gd" id="10_4fyq6"]
 [ext_resource type="Resource" uid="uid://bcfq5lfnv7svo" path="res://dialogue/Libby.dialogue" id="10_7srie"]
 [ext_resource type="Texture2D" uid="uid://j3hb525ospbs" path="res://assets/sprites/saturn-sea_npclibby 0.png" id="11_68exu"]
 [ext_resource type="Texture2D" uid="uid://go0sdi35261o" path="res://assets/sprites/saturn-sea_npclibby 1.png" id="12_m21vi"]
@@ -21,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://c8c6fnbxs0b7r" path="res://assets/sprites/saturn-sea_world.png" id="19_d2mj0"]
 [ext_resource type="Script" path="res://scripts/LightState.gd" id="20_8fmdc"]
 [ext_resource type="PackedScene" uid="uid://bgs4d3glnklel" path="res://scenes/next_level.tscn" id="21_h7ois"]
+[ext_resource type="Script" path="res://scenes/music_fade_out.gd" id="21_kyqtv"]
+[ext_resource type="Script" path="res://scenes/levels/musicfade1.gd" id="22_1irjx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47n6d"]
 animations = [{
@@ -1350,6 +1354,7 @@ centered = false
 region_filter_clip_enabled = true
 
 [node name="Light Pollution" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(-11, 0)
 scale = Vector2(1, 1.11833)
 texture = ExtResource("2_13igf")
 centered = false
@@ -1398,6 +1403,7 @@ frame_progress = 0.635732
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCInteracts/NPCInteract 1/Actionable"]
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_sqm0m")
+script = ExtResource("9_rhhuh")
 
 [node name="NPCInteract 2" parent="NPCInteracts" instance=ExtResource("5_5ob40")]
 z_index = 3
@@ -1421,6 +1427,7 @@ autoplay = "default"
 [node name="NPCInteract 3" parent="NPCInteracts" instance=ExtResource("5_5ob40")]
 z_index = 3
 position = Vector2(1128, 482)
+script = ExtResource("10_4fyq6")
 
 [node name="Actionable" parent="NPCInteracts/NPCInteract 3" instance=ExtResource("8_0n0l7")]
 script = ExtResource("13_187e1")
@@ -1637,6 +1644,7 @@ position = Vector2(492, 478)
 color = Color(0.938166, 0.904855, 0.395571, 1)
 energy = 5.66
 texture = SubResource("GradientTexture2D_oexm0")
+script = ExtResource("22_1irjx")
 
 [node name="StreetLight B_1" type="PointLight2D" parent="Street Lighting 2Ds"]
 position = Vector2(540, 477)
@@ -1681,6 +1689,7 @@ energy = 5.66
 texture = SubResource("GradientTexture2D_oexm0")
 
 [node name="Music Transition 1" type="Area2D" parent="."]
+script = ExtResource("21_kyqtv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 1"]
 position = Vector2(581, 461)
@@ -1688,6 +1697,7 @@ shape = SubResource("RectangleShape2D_3o3qh")
 
 [node name="Music Transition 2" type="Area2D" parent="."]
 position = Vector2(438, 0)
+script = ExtResource("21_kyqtv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Music Transition 2"]
 position = Vector2(581, 461)

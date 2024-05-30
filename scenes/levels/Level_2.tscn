@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://brau20xmcicjc"]
+[gd_scene load_steps=25 format=3 uid="uid://brau20xmcicjc"]
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_0wwma"]
 [ext_resource type="Script" path="res://scripts/Lvl2CutsceneAnim.gd" id="1_438w4"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://df07pxcli5djw" path="res://assets/placeholder sprites/world_tileset.png" id="9_dujx8"]
 [ext_resource type="Texture2D" uid="uid://bdfgi1wl80tvl" path="res://assets/sprites/saturn-sea_ship hull visible.png" id="10_rm03k"]
 [ext_resource type="Texture2D" uid="uid://c8c6fnbxs0b7r" path="res://assets/sprites/saturn-sea_world.png" id="11_50mad"]
+[ext_resource type="AudioStream" uid="uid://cj0nwj36djvwe" path="res://assets/music/Saturn_of_the_Sea_Solo_PIANO_Loop.wav" id="13_atuq8"]
+[ext_resource type="Script" path="res://scenes/levels/Find the elder.gd" id="14_1d181"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqm0m"]
 
@@ -1418,6 +1420,14 @@ shape = SubResource("RectangleShape2D_3o3qh")
 libraries = {
 "": SubResource("AnimationLibrary_ke0fi")
 }
+
+[node name="Find the elder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_atuq8")
+autoplay = true
+bus = &"Music"
+script = ExtResource("14_1d181")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Find the elder"]
 
 [connection signal="area_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="NPCInteracts/NPCInteract 4/Actionable" method="_on_area_exited"]
 [connection signal="body_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="PlayerChara" method="_on_actionable_body_exited"]

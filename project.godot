@@ -30,6 +30,8 @@ Global="*res://scripts/Global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SoundManager="*res://addons/resonate/sound_manager/sound_manager.gd"
 MusicManager="*res://addons/resonate/music_manager/music_manager.gd"
+MusicPlayer1="*res://MusicPlayer1.gd"
+MusicPlayer2="*res://MusicPlayer2.gd"
 
 [dialogue_manager]
 

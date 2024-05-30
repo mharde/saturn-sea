@@ -12,3 +12,8 @@ func _on_body_entered(body):
 		var next_level_path = FiLE_BEGIN + str(next_level_number) + ".tscn"
 		print(next_level_path)
 		get_tree().call_deferred ("change_scene_to_file", next_level_path)  # Sends player to next level
+	
+	if body.is_in_group("Player") :
+		MusicPlayer1.stop()		
+	if body.is_in_group("Player") :
+		MusicPlayer2.stop()		

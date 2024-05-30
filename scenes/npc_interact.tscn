@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://u4evdvn458gc"]
+[gd_scene load_steps=4 format=3 uid="uid://u4evdvn458gc"]
 
+[ext_resource type="Script" path="res://scenes/music_fade_out.gd" id="1_1bl3b"]
 [ext_resource type="Texture2D" uid="uid://do0xh7vykw8r4" path="res://assets/sprites/saturn-sea_npcleo 0.png" id="1_re3yr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0krc"]
@@ -7,6 +8,7 @@ radius = 4.0
 
 [node name="NPCInteract" type="Area2D"]
 collision_mask = 2
+script = ExtResource("1_1bl3b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
