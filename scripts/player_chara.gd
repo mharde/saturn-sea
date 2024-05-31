@@ -55,7 +55,9 @@ func _unhandled_input(_event: InputEvent) -> void: #handling interactions
 			actionables[0].action()
 			return
 	set_physics_process(true) #to re-enable player movement after interactions
-	
+	if Input.is_action_pressed("quit_game"):
+		get_tree().quit()
+		
 			
 		
 			

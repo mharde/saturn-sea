@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://brau20xmcicjc"]
+[gd_scene load_steps=26 format=3 uid="uid://brau20xmcicjc"]
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_0wwma"]
 [ext_resource type="Script" path="res://scripts/Lvl2CutsceneAnim.gd" id="1_438w4"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c8c6fnbxs0b7r" path="res://assets/sprites/saturn-sea_world.png" id="11_50mad"]
 [ext_resource type="AudioStream" uid="uid://cj0nwj36djvwe" path="res://assets/music/Saturn_of_the_Sea_Solo_PIANO_Loop.wav" id="13_atuq8"]
 [ext_resource type="Script" path="res://scenes/levels/Find the elder.gd" id="14_1d181"]
+[ext_resource type="FontFile" uid="uid://baf85lqjee4ra" path="res://assets/fonts/PixelOperator8.ttf" id="15_g8fl4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqm0m"]
 
@@ -1387,7 +1388,7 @@ tracks/3/path = NodePath("Tooltip-ToCredits:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 30),
+"times": PackedFloat32Array(0, 23),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1411,8 +1412,8 @@ centered = false
 region_filter_clip_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="ParallaxBackground"]
-color = Color(0.943767, 0.467753, 0.197513, 1)
-energy = 1.67
+color = Color(0.964111, 0.453773, 1.92523e-07, 1)
+energy = 1.18
 blend_mode = 1
 
 [node name="PlayerChara" parent="." instance=ExtResource("2_2kh2w")]
@@ -1486,12 +1487,26 @@ offset_bottom = 474.0
 text = "Press E to talk to Grannie"
 
 [node name="Tooltip-ToCredits" type="RichTextLabel" parent="."]
-offset_left = 1066.0
-offset_top = 406.0
-offset_right = 1176.0
-offset_bottom = 475.0
-text = "To the Credits scene
-->"
+texture_filter = 3
+offset_left = 1070.0
+offset_top = 404.0
+offset_right = 1194.0
+offset_bottom = 480.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("15_g8fl4")
+theme_override_font_sizes/normal_font_size = 8
+text = "Credits
+
+Maggie H - 
+Game Designer, budding Pixel Artist
+
+Jamail Chachere - 
+Composer and Audio Programmer
+
+Background art adapted from “Pixelart Starfields” Space Spheremaps
+
+Pixel font sourced from Jayvee Enaguas - HarvettFox96 on dafont.com"
 
 [connection signal="area_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="NPCInteracts/NPCInteract 4/Actionable" method="_on_area_exited"]
 [connection signal="body_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="PlayerChara" method="_on_actionable_body_exited"]
