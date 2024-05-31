@@ -1291,7 +1291,7 @@ sources/3 = SubResource("TileSetAtlasSource_whhdw")
 size = Vector2(24, 53)
 
 [sub_resource type="Animation" id="Animation_wt840"]
-length = 0.001
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1316,10 +1316,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(909, 482)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tooltip-FindMay:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tooltip-ToCredits:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_aehng"]
 resource_name = "cutscene"
-length = 25.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1343,6 +1367,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(909, 482), Vector2(929, 482), Vector2(959, 482), Vector2(999, 482), Vector2(1020, 482), Vector2(1050, 482)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tooltip-FindMay:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 11.5, 14.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tooltip-ToCredits:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ke0fi"]
@@ -1428,6 +1476,22 @@ bus = &"Music"
 script = ExtResource("14_1d181")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Find the elder"]
+
+[node name="Tooltip-FindMay" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 1017.0
+offset_top = 405.0
+offset_right = 1127.0
+offset_bottom = 474.0
+text = "Press E to talk to Grannie"
+
+[node name="Tooltip-ToCredits" type="RichTextLabel" parent="."]
+offset_left = 1066.0
+offset_top = 406.0
+offset_right = 1176.0
+offset_bottom = 475.0
+text = "To the Credits scene
+->"
 
 [connection signal="area_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="NPCInteracts/NPCInteract 4/Actionable" method="_on_area_exited"]
 [connection signal="body_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="PlayerChara" method="_on_actionable_body_exited"]
