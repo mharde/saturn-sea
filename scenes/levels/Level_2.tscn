@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brau20xmcicjc"]
+[gd_scene load_steps=29 format=3 uid="uid://brau20xmcicjc"]
 
 [ext_resource type="Texture2D" uid="uid://bhvad7066o4r3" path="res://assets/sprites/furthest background parallax.png" id="1_0wwma"]
 [ext_resource type="Script" path="res://scripts/Lvl2CutsceneAnim.gd" id="1_438w4"]
@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://cj0nwj36djvwe" path="res://assets/music/Saturn_of_the_Sea_Solo_PIANO_Loop.wav" id="13_atuq8"]
 [ext_resource type="Script" path="res://scenes/levels/Find the elder.gd" id="14_1d181"]
 [ext_resource type="FontFile" uid="uid://baf85lqjee4ra" path="res://assets/fonts/PixelOperator8.ttf" id="15_g8fl4"]
+[ext_resource type="Texture2D" uid="uid://bn3tmnc8cfii3" path="res://assets/sprites/saturn-sea_childshadow.png" id="16_o0il2"]
+[ext_resource type="Texture2D" uid="uid://jsl4yn0atumk" path="res://assets/sprites/saturn-sea_npcshadow1.png" id="17_wsfav"]
+[ext_resource type="Texture2D" uid="uid://daxkb6nr82veu" path="res://assets/sprites/saturn-sea_npcshadow2.png" id="18_h4rtw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqm0m"]
 
@@ -1332,7 +1335,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Tooltip-ToCredits:visible")
+tracks/3/path = NodePath("Tooltip-Quit:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1344,7 +1347,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_aehng"]
 resource_name = "cutscene"
-length = 30.0
+length = 35.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1352,10 +1355,10 @@ tracks/0/path = NodePath("PlayerChara:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3.5, 11.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 3.5, 6, 12, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(718, 491), Vector2(750, 491), Vector2(850, 491), Vector2(1030, 491)]
+"values": [Vector2(718, 491), Vector2(750, 491), Vector2(850, 491), Vector2(890, 491), Vector2(890, 491), Vector2(1130, 491)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1364,10 +1367,10 @@ tracks/1/path = NodePath("NPCInteracts/NPCInteract 4:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.5, 5, 6, 8.5, 10, 11.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(3.5, 5, 6, 8.4, 10, 11.5, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(909, 482), Vector2(929, 482), Vector2(959, 482), Vector2(999, 482), Vector2(1020, 482), Vector2(1050, 482)]
+"values": [Vector2(909, 482), Vector2(929, 482), Vector2(959, 482), Vector2(999, 482), Vector2(1020, 482), Vector2(1050, 482), Vector2(1150, 482)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1376,7 +1379,7 @@ tracks/2/path = NodePath("Tooltip-FindMay:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 11.5, 14.9),
+"times": PackedFloat32Array(0, 18.9, 21.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -1384,11 +1387,11 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Tooltip-ToCredits:visible")
+tracks/3/path = NodePath("Tooltip-Quit:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 23),
+"times": PackedFloat32Array(0, 34.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1406,6 +1409,7 @@ script = ExtResource("1_438w4")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="StarfieldBkgrd" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(-89, -13)
 scale = Vector2(3, 3.354)
 texture = ExtResource("1_0wwma")
 centered = false
@@ -1480,18 +1484,18 @@ script = ExtResource("14_1d181")
 
 [node name="Tooltip-FindMay" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 1017.0
-offset_top = 405.0
-offset_right = 1127.0
-offset_bottom = 474.0
+offset_left = 1081.0
+offset_top = 404.0
+offset_right = 1191.0
+offset_bottom = 473.0
 text = "Press E to talk to Grannie"
 
 [node name="Tooltip-ToCredits" type="RichTextLabel" parent="."]
 texture_filter = 3
-offset_left = 1070.0
-offset_top = 404.0
-offset_right = 1194.0
-offset_bottom = 480.0
+offset_left = 838.0
+offset_top = 392.0
+offset_right = 962.0
+offset_bottom = 468.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("15_g8fl4")
@@ -1507,6 +1511,121 @@ Composer and Audio Programmer
 Background art adapted from “Pixelart Starfields” Space Spheremaps
 
 Pixel font sourced from Jayvee Enaguas - HarvettFox96 on dafont.com"
+
+[node name="Tooltip-Quit" type="RichTextLabel" parent="."]
+texture_filter = 3
+offset_left = 1070.0
+offset_top = 392.0
+offset_right = 1151.0
+offset_bottom = 411.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("15_g8fl4")
+theme_override_font_sizes/normal_font_size = 8
+text = "Press ESC 
+to quit game"
+
+[node name="NPCShadowCrowd" type="Node2D" parent="."]
+
+[node name="Saturn-seaChildshadow" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(930, 484)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow2" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(995, 485)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow3" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(896, 485)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow4" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(909, 485)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaNpcshadow1" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(972, 483)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow2" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(949, 483)
+texture = ExtResource("18_h4rtw")
+
+[node name="Saturn-seaNpcshadow3" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(1035, 483)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow4" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(983, 484)
+texture = ExtResource("18_h4rtw")
+
+[node name="Saturn-seaNpcshadow5" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(798, 483)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow6" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(1006, 483)
+texture = ExtResource("18_h4rtw")
+
+[node name="Saturn-seaChildshadow5" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(836, 484)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow6" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(960, 484)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow7" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(848, 484)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaChildshadow8" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(756, 484)
+texture = ExtResource("16_o0il2")
+
+[node name="Saturn-seaNpcshadow7" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(821, 483)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow8" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(949, 483)
+texture = ExtResource("18_h4rtw")
+
+[node name="Saturn-seaNpcshadow9" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(869, 484)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow10" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(858, 484)
+texture = ExtResource("18_h4rtw")
+
+[node name="Saturn-seaNpcshadow11" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(920, 484)
+texture = ExtResource("17_wsfav")
+
+[node name="Saturn-seaNpcshadow12" type="Sprite2D" parent="NPCShadowCrowd"]
+z_index = 3
+position = Vector2(1006, 483)
+texture = ExtResource("18_h4rtw")
 
 [connection signal="area_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="NPCInteracts/NPCInteract 4/Actionable" method="_on_area_exited"]
 [connection signal="body_exited" from="NPCInteracts/NPCInteract 4/Actionable" to="PlayerChara" method="_on_actionable_body_exited"]
